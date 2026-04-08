@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gleebem — Relatório de Marketing Estratégico 2025/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --teal:       #4FB8E6;
+    --teal-dark:  #2E8EBF;
+    --teal-light: #B6E2F5;
+    --teal-faint: #E8F5FC;
+    --navy:       #1B3A4B;
+    --navy-mid:   #264653;
+    --orange:     #FF6B35;
+    --red:        #E24B4A;
+    --amber:      #EF9F27;
+    --green:      #1D9E75;
+    --ink:        #1A2B3C;
+    --ink-mid:    #2D3748;
+    --muted:      #6B7C8D;
+    --border:     rgba(0,0,0,0.08);
+    --bg:         #EEF2F6;
+    --card:       #FFFFFF;
+    --font-display: 'Montserrat', sans-serif;
+    --font-body:    'Montserrat', sans-serif;
+    --font-mono:    'Montserrat', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink-mid);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem; height: 64px;
+  }
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.35rem; font-weight: 700;
+    color: var(--teal-dark); letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-brand span { color: var(--teal); }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem; color: var(--teal-dark);
+    border: 1px solid var(--teal-light);
+    background: var(--teal-faint);
+    padding: 4px 10px; border-radius: 99px; font-weight: 600;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(155deg, #1B3A4B 0%, #264653 40%, #2E8EBF 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 120px 2rem 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 60%, rgba(79,184,230,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(79,184,230,1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,184,230,1) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em;
+    color: var(--teal); text-transform: uppercase;
+    border: 1px solid rgba(0,181,173,0.35);
+    background: rgba(0,181,173,0.08);
+    padding: 6px 16px; border-radius: 99px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 800; line-height: 1;
+    color: #fff; letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.7s .1s ease both;
+  }
+  .hero h1 em { color: var(--teal); font-style: normal; }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.55);
+    max-width: 540px; margin: 0 auto 3rem;
+    animation: fadeUp 0.7s .2s ease both;
+  }
+  .hero-kpis {
+    display: flex; gap: 2px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 3.5rem;
+    animation: fadeUp 0.7s .3s ease both;
+  }
+  .kpi-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 24px; border-radius: 4px;
+    text-align: center;
+  }
+  .kpi-pill strong {
+    display: block;
+    font-family: var(--font-display); font-size: 1.6rem; font-weight: 800;
+    color: var(--teal); line-height: 1;
+  }
+  .kpi-pill span { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; }
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); animation: fadeUp 1s .5s ease both;
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, rgba(0,181,173,0.7), transparent);
+    animation: scrollDown 2s infinite;
+  }
+  @keyframes scrollDown { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 2rem; max-width: 1160px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.6rem; display: flex; align-items: center; gap: 10px;
+  }
+  .section-eyebrow::before { content: ''; flex: 0 0 24px; height: 1px; background: var(--teal); }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800; color: var(--navy); line-height: 1.1;
+    letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .section-lead { font-size: 1rem; color: var(--muted); max-width: 600px; margin-bottom: 3rem; line-height: 1.7; }
+
+  /* ── MARKET STRIP ── */
+  .market-strip {
+    background: var(--navy);
+    padding: 3rem 2rem;
+  }
+  .market-strip-inner {
+    max-width: 1160px; margin: 0 auto;
+  }
+  .market-numbers {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden;
+  }
+  .market-num {
+    background: var(--navy-mid);
+    padding: 2rem 1.5rem; text-align: center;
+  }
+  .market-num strong {
+    display: block; font-family: var(--font-display); font-size: 2rem; font-weight: 800;
+    color: var(--teal); margin-bottom: 4px;
+  }
+  .market-num span { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem; transition: transform .2s, box-shadow .2s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+
+  /* ── SWOT ── */
+  .swot-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3px;
+    border-radius: 16px; overflow: hidden;
+  }
+  .swot-cell { padding: 2rem; }
+  .swot-cell.forcas  { background: #1565C0; }
+  .swot-cell.fraquezas { background: #A32D2D; }
+  .swot-cell.oportunidades { background: #2E7D32; }
+  .swot-cell.ameacas { background: #E65100; }
+  .swot-label {
+    font-family: var(--font-display); font-size: 1rem; font-weight: 800;
+    color: #fff; margin-bottom: 1rem; letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .swot-items { list-style: none; }
+  .swot-items li {
+    font-size: 0.82rem; color: rgba(255,255,255,0.82);
+    padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+    line-height: 1.5;
+  }
+  .swot-items li:last-child { border-bottom: none; }
+  .swot-items li::before { content: '— '; opacity: 0.5; }
+
+  /* ── RIVALS ── */
+  .rivals-wrapper { display: flex; gap: 2rem; }
+  .rivals-tabs {
+    flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px;
+  }
+  .rival-tab {
+    padding: 12px 16px; border-radius: 10px; cursor: pointer;
+    border: 1px solid transparent; transition: all .2s;
+    font-size: 0.85rem; font-weight: 500;
+    background: transparent; text-align: left; color: var(--muted);
+  }
+  .rival-tab:hover { background: var(--card); border-color: var(--border); }
+  .rival-tab.active {
+    background: var(--navy); color: #fff; border-color: var(--navy);
+  }
+  .rival-tab small { display: block; font-size: 0.7rem; opacity: 0.6; font-weight: 400; margin-top: 2px; }
+  .rival-panel { flex: 1; display: none; }
+  .rival-panel.active { display: block; animation: fadeIn .3s ease; }
+  @keyframes fadeIn { from{opacity:0;transform:translateX(8px)} to{opacity:1;transform:translateX(0)} }
+  .rival-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .rival-name-big { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--navy); }
+  .rival-badge {
+    font-size: 0.72rem; padding: 5px 12px; border-radius: 99px; font-weight: 500;
+    background: var(--teal-faint); color: var(--teal-dark);
+  }
+  .rival-body { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
+  .rival-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .rival-col-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.75rem; padding-bottom: 6px; border-bottom: 2px solid;
+  }
+  .rival-col-label.plus { color: var(--red); border-color: var(--red); }
+  .rival-col-label.minus { color: var(--green); border-color: var(--green); }
+  .rival-col ul { list-style: none; }
+  .rival-col ul li {
+    font-size: 0.83rem; color: var(--ink-mid); padding: 6px 0;
+    border-bottom: 1px solid var(--border); line-height: 1.5;
+  }
+  .rival-col ul li:last-child { border-bottom: none; }
+  .rival-col.plus ul li::before { content: '✕ '; color: var(--red); font-size: 0.7rem; }
+  .rival-col.minus ul li::before { content: '✓ '; color: var(--green); font-size: 0.7rem; }
+
+  /* ── GAPS ── */
+  .gaps-list { display: flex; flex-direction: column; gap: 12px; }
+  .gap-row {
+    display: grid; grid-template-columns: 280px 1fr; gap: 0;
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .gap-left {
+    background: var(--navy); padding: 1.25rem 1.5rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .gap-number {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--teal);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .gap-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.3; }
+  .gap-right { padding: 1.25rem 1.5rem; font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── DORES ── */
+  .dores-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .dor-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.75rem; border-left: 4px solid;
+  }
+  .dor-card.emp { border-left-color: var(--red); }
+  .dor-card.rh  { border-left-color: var(--amber); }
+  .dor-card.col { border-left-color: #378ADD; }
+  .dor-card.mei { border-left-color: var(--green); }
+  .dor-icon { font-size: 1.4rem; margin-bottom: 0.75rem; display: block; }
+  .dor-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
+  .dor-card ul { list-style: none; }
+  .dor-card ul li { font-size: 0.83rem; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--border); line-height: 1.5; }
+  .dor-card ul li:last-child { border-bottom: none; }
+  .dor-card ul li::before { content: '· '; color: var(--teal); }
+
+  /* ── SOLUTIONS ── */
+  .sol-grid { display: flex; flex-direction: column; gap: 12px; }
+  .sol-row {
+    display: grid; grid-template-columns: 1fr 1.6fr auto;
+    align-items: center; gap: 0;
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .sol-pain { padding: 1.25rem 1.5rem; }
+  .sol-pain-cat { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+  .sol-pain-text { font-size: 0.88rem; font-weight: 500; color: var(--navy); }
+  .sol-fix {
+    padding: 1.25rem 1.5rem;
+    border-left: 1px solid var(--border);
+    font-size: 0.83rem; color: var(--muted); line-height: 1.6;
+  }
+  .sol-tag {
+    padding: 0 1.5rem;
+    display: flex; align-items: center;
+  }
+  .badge {
+    display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
+    padding: 5px 12px; border-radius: 99px; white-space: nowrap;
+    background: rgba(0,181,173,0.1); color: var(--teal-dark);
+    border: 1px solid rgba(0,181,173,0.25);
+  }
+
+  /* ── STRATEGY ── */
+  .strategy-tabs { display: flex; gap: 4px; margin-bottom: 2rem; flex-wrap: wrap; }
+  .strat-tab {
+    padding: 10px 20px; border-radius: 8px; cursor: pointer;
+    font-size: 0.82rem; font-weight: 500;
+    border: 1px solid var(--border); background: var(--card); color: var(--muted);
+    transition: all .2s;
+  }
+  .strat-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .strat-panel { display: none; }
+  .strat-panel.active { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; animation: fadeIn .3s ease; }
+  .strat-item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .strat-num {
+    flex: 0 0 28px; height: 28px; border-radius: 50%;
+    background: var(--navy); color: var(--teal);
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .strat-text { font-size: 0.84rem; color: var(--ink-mid); line-height: 1.6; }
+
+  /* ── ROADMAP ── */
+  .roadmap { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+  .road-phase {
+    padding: 2rem 1.5rem;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .road-phase:last-child { border-right: none; }
+  .road-phase::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  }
+  .road-phase:nth-child(1)::before { background: var(--teal); }
+  .road-phase:nth-child(2)::before { background: var(--amber); }
+  .road-phase:nth-child(3)::before { background: var(--orange); }
+  .road-phase:nth-child(4)::before { background: var(--green); }
+  .road-period { font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal); letter-spacing: 0.08em; margin-bottom: 4px; }
+  .road-name { font-family: var(--font-display); font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem; }
+  .road-items { list-style: none; }
+  .road-items li { font-size: 0.78rem; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--border); line-height: 1.4; }
+  .road-items li:last-child { border-bottom: none; }
+  .road-items li::before { content: '→ '; color: var(--teal); }
+  .road-goal {
+    margin-top: 1rem; padding: 8px 12px; border-radius: 8px;
+    background: var(--bg); font-size: 0.75rem; color: var(--ink-mid); font-weight: 500;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .comp-table th {
+    padding: 14px 16px; text-align: left;
+    background: var(--navy); color: rgba(255,255,255,0.7);
+    font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500;
+  }
+  .comp-table th:first-child { border-radius: 10px 0 0 0; }
+  .comp-table th:last-child { border-radius: 0 10px 0 0; }
+  .comp-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+  .comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--ink-mid); vertical-align: middle; }
+  .comp-table tr.gleebem td { background: var(--teal-faint); font-weight: 500; }
+  .star-full { color: var(--teal); }
+  .star-empty { color: var(--border); }
+
+  /* ── KPIs ── */
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .kpi-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .kpi-label { font-size: 0.75rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .kpi-current { font-family: var(--font-mono); font-size: 0.8rem; color: var(--red); margin-bottom: 4px; }
+  .kpi-target { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--teal-dark); }
+  .kpi-tool { font-size: 0.7rem; color: var(--muted); margin-top: 6px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+  footer strong { color: var(--teal); }
+
+  /* ── DIFFERENTIALS (from gleebem.com.br) ── */
+  .diff-section {
+    background: linear-gradient(135deg, #3DA3D4 0%, #4FB8E6 50%, #6CC8ED 100%);
+    padding: 4rem 2rem; border-radius: 24px; max-width: 1160px; margin: 0 auto;
+    color: #fff;
+  }
+  .diff-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .diff-header h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 800; }
+  .diff-header p { font-size: 1rem; max-width: 480px; opacity: 0.9; line-height: 1.7; }
+  .diff-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .diff-card {
+    background: rgba(255,255,255,0.18); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25); border-radius: 16px;
+    padding: 2rem; transition: transform .2s, background .2s;
+  }
+  .diff-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.28); }
+  .diff-card-icon { width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.9; }
+  .diff-card strong { display: block; font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+  .diff-card span { font-size: 0.85rem; opacity: 0.85; }
+
+  /* ── TESTIMONIAL STRIP ── */
+  .testimonial-strip {
+    background: linear-gradient(135deg, #3DA3D4 0%, #4FB8E6 100%);
+    padding: 3.5rem 2rem; margin: 0;
+  }
+  .testimonial-inner { max-width: 1160px; margin: 0 auto; }
+  .testimonial-inner h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: #fff; text-align: center; margin-bottom: 2rem; }
+  .testimonial-inner h2 strong { font-weight: 900; }
+  .testimonial-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .testimonial-card {
+    background: #fff; border-radius: 16px; padding: 2rem; position: relative;
+  }
+  .testimonial-stars { color: var(--teal); font-size: 1rem; margin-bottom: .75rem; letter-spacing: 2px; }
+  .testimonial-card blockquote { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal); color: #fff; font-weight: 700; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .testimonial-name { font-weight: 600; font-size: 0.85rem; color: var(--ink); }
+  .testimonial-company { font-size: 0.75rem; color: var(--muted); }
+  .csat-badge {
+    background: linear-gradient(135deg, #264653, #1B3A4B); border-radius: 12px;
+    padding: 14px 20px; display: flex; align-items: center; gap: 12px;
+    margin-top: 1rem;
+  }
+  .csat-badge .csat-star { color: #FFD700; font-size: 1.3rem; }
+  .csat-badge .csat-score { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #fff; }
+  .csat-badge .csat-max { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+  .csat-badge .csat-label { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+  .csat-badge .csat-label strong { color: #fff; display: block; font-size: 0.8rem; }
+
+  /* ── CLIENT LOGOS ── */
+  .clients-strip { padding: 3rem 2rem; background: var(--bg); }
+  .clients-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .clients-inner p { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 1.5rem; }
+  .clients-logos {
+    display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap;
+    opacity: 0.5; filter: grayscale(100%);
+  }
+  .clients-logos span { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--ink-mid); }
+
+  /* ── UTILS ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .divider { height: 1px; background: var(--border); margin: 0; }
+  .text-teal { color: var(--teal); }
+  @media print {
+    nav, .hero-scroll { display: none; }
+    section { padding: 40px 0; }
+    .hero { min-height: auto; padding: 60px 2rem; }
+  }
+
+  @media (max-width: 768px) {
+    .swot-grid, .rivals-wrapper, .rival-cols, .dores-grid, .roadmap, .kpi-grid, .two-col { grid-template-columns: 1fr; }
+    .rivals-wrapper { flex-direction: column; }
+    .rivals-tabs { flex-direction: row; flex-wrap: wrap; flex: none; }
+    .gap-row, .sol-row { grid-template-columns: 1fr; }
+    .strat-panel.active { grid-template-columns: 1fr; }
+    .market-numbers { grid-template-columns: repeat(2,1fr); }
+    .diff-cards { grid-template-columns: 1fr; }
+    .testimonial-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 10C30 25 15 50 25 75C35 95 55 90 65 80C75 70 80 50 70 35C60 20 45 25 40 40C35 55 45 65 55 60C65 55 60 45 55 45" stroke="url(#gleebem-grad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <defs><linearGradient id="gleebem-grad" x1="20" y1="20" x2="80" y2="80"><stop offset="0%" stop-color="#2EBF91"/><stop offset="100%" stop-color="#4FB8E6"/></linearGradient></defs>
+    </svg>
+    Gleebem
+  </div>
+  <ul class="nav-links">
+    <li><a href="#mercado">Mercado</a></li>
+    <li><a href="#swot">SWOT</a></li>
+    <li><a href="#rivais">Rivais</a></li>
+    <li><a href="#gaps">Gaps</a></li>
+    <li><a href="#dores">Dores</a></li>
+    <li><a href="#estrategia">Estratégia</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+  </ul>
+  <span class="nav-badge">Março / 2026</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-tag">Relatório de Marketing Estratégico Completo</div>
+  <h1>Hub de <em>Saúde Digital</em><br>que transforma negócios</h1>
+  <p class="hero-sub">Análise completa de mercado, benchmarking competitivo, gaps críticos, dores do público-alvo e estratégias de crescimento para a Gleebem.</p>
+  <div class="hero-kpis">
+    <div class="kpi-pill"><strong>+19</strong><span>Especialidades</span></div>
+    <div class="kpi-pill"><strong>5min</strong><span>Espera média</span></div>
+    <div class="kpi-pill"><strong>7</strong><span>Cliques p/ consultar</span></div>
+    <div class="kpi-pill"><strong>24h</strong><span>Pronto-atend.</span></div>
+    <div class="kpi-pill"><strong>0</strong><span>Dias de carência</span></div>
+    <div class="kpi-pill"><strong>B2B</strong><span>Desde 5 vidas</span></div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    SCROLL
+  </div>
+</div>
+
+<!-- DIFERENCIAIS (from gleebem.com.br) -->
+<section style="padding-bottom:0;">
+  <div class="diff-section">
+    <div class="diff-header">
+      <h2>Nossos Diferenciais</h2>
+      <p>Um aplicativo rápido e fácil de usar, onde todos podem se cuidar – até mesmo quem não domina tecnologia.</p>
+    </div>
+    <div class="diff-cards">
+      <div class="diff-card">
+        <svg class="diff-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2.5"/><path d="M24 14v10l7 4" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <strong>5 minutos</strong>
+        <span>tempo médio de espera</span>
+      </div>
+      <div class="diff-card">
+        <svg class="diff-card-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="4" fill="#fff"/><path d="M24 8v6M24 34v6M8 24h6M34 24h6M12 12l4.5 4.5M31.5 31.5l4.5 4.5M12 36l4.5-4.5M31.5 16.5L36 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <strong>7 cliques</strong>
+        <span>para iniciar a consulta</span>
+      </div>
+      <div class="diff-card">
+        <svg class="diff-card-icon" viewBox="0 0 48 48" fill="none"><rect x="14" y="10" width="20" height="28" rx="3" stroke="#fff" stroke-width="2.5"/><path d="M24 18v6M21 21h6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <strong>24 horas</strong>
+        <span>pronto atendimento</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERCADO -->
+<div class="market-strip" id="mercado">
+  <div class="market-strip-inner">
+    <div class="section-eyebrow" style="color:var(--teal);margin-bottom:1.5rem;">Contexto de Mercado</div>
+    <div class="market-numbers">
+      <div class="market-num"><strong>US$ 2,4bi</strong><span>Mercado brasileiro (2025)</span></div>
+      <div class="market-num"><strong>US$ 12,9bi</strong><span>Projeção para 2034</span></div>
+      <div class="market-num"><strong>20,52%</strong><span>CAGR projetado ao ano</span></div>
+      <div class="market-num"><strong>38,2%</strong><span>CAGR segmento corporativo</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SUMÁRIO -->
+<section>
+  <div class="section-eyebrow">Sobre a empresa</div>
+  <div class="section-title">O que é a Gleebem</div>
+  <div class="section-lead">Hub de Saúde Digital B2B sediado em Lagarto (SE), com presença em São Paulo. Opera telemedicina em modelo white label para empresas de todos os portes.</div>
+  <div class="two-col">
+    <div>
+      <div class="card">
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:1rem;">Proposta de Valor</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>Pronto-atendimento 24h com Einstein via videochamada</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>White label — app nas cores e marca do cliente</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>+19 especialidades: Psicologia, Psiquiatria, Cardiologia...</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>Dashboards gerenciais de saúde corporativa para RH</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>Zero carência — acesso imediato após cadastro</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>Atende desde MEI e micro (mínimo 5 colaboradores)</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>Suporte humanizado com equipe dedicada</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);"><span style="flex:0 0 20px;height:20px;border-radius:50%;background:var(--teal-faint);color:var(--teal-dark);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">✓</span>Extensível a dependentes dos colaboradores</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="background:var(--navy);border-color:transparent;height:100%;">
+        <h3 style="font-family:var(--font-display);color:#fff;margin-bottom:1.25rem;">Presença & Canais</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="padding:12px;background:rgba(255,255,255,0.06);border-radius:8px;">
+            <div style="font-size:.68rem;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;">Localização</div>
+            <div style="font-size:.83rem;color:rgba(255,255,255,.7);">Lagarto, SE (HQ) · Brooklin, São Paulo (SP)</div>
+          </div>
+          <div style="padding:12px;background:rgba(255,255,255,0.06);border-radius:8px;">
+            <div style="font-size:.68rem;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;">Digital</div>
+            <div style="font-size:.83rem;color:rgba(255,255,255,.7);">gleebem.com.br · App Store · Google Play · Instagram · Facebook · YouTube</div>
+          </div>
+          <div style="padding:12px;background:rgba(255,255,255,0.06);border-radius:8px;">
+            <div style="font-size:.68rem;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;">Contato comercial</div>
+            <div style="font-size:.83rem;color:rgba(255,255,255,.7);">comercial@gleebem.com.br · (79) 98817-0039</div>
+          </div>
+          <div style="padding:12px;background:rgba(255,255,255,0.06);border-radius:8px;">
+            <div style="font-size:.68rem;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;">Modelo de negócio</div>
+            <div style="font-size:.83rem;color:rgba(255,255,255,.7);">B2B SaaS · Assinatura por vida · White Label</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SWOT -->
+<section id="swot">
+  <div class="section-eyebrow">Análise interna & externa</div>
+  <div class="section-title">Matriz SWOT</div>
+  <div class="section-lead">Mapeamento completo dos fatores internos (forças e fraquezas) e externos (oportunidades e ameaças) que moldam o posicionamento competitivo da Gleebem.</div>
+  <div class="swot-grid">
+    <div class="swot-cell forcas">
+      <div class="swot-label">S — Forças</div>
+      <ul class="swot-items">
+        <li>Parceria com Einstein — máxima referência médica do Brasil</li>
+        <li>5 minutos de espera média — altamente competitivo</li>
+        <li>Apenas 7 cliques para iniciar uma consulta</li>
+        <li>White label que agrega valor à marca do cliente B2B</li>
+        <li>Dashboards gerenciais para gestão do benefício por RH</li>
+        <li>Zero carência — diferencial direto vs planos convencionais</li>
+        <li>Atende MEI e micro (a partir de 5 colaboradores)</li>
+        <li>Suporte humanizado com equipe dedicada</li>
+        <li>Presença estratégica em Sergipe (custo) + SP (credibilidade)</li>
+      </ul>
+    </div>
+    <div class="swot-cell fraquezas">
+      <div class="swot-label">W — Fraquezas</div>
+      <ul class="swot-items">
+        <li>Baixo reconhecimento de marca em escala nacional</li>
+        <li>Sem avaliações públicas expressivas (Reclame Aqui, Play Store)</li>
+        <li>Instagram com volume limitado e baixo engajamento</li>
+        <li>Site sem blog, SEO de conteúdo ou material rico</li>
+        <li>Preços opacos — sem tabela pública ou faixas de valor</li>
+        <li>Sem integrações com ERPs de RH ou plataformas de benefícios</li>
+        <li>Cases de sucesso e provas sociais ausentes no site</li>
+        <li>Sem opção de contratação individual — mercado inexplorado</li>
+      </ul>
+    </div>
+    <div class="swot-cell oportunidades">
+      <div class="swot-label">O — Oportunidades</div>
+      <ul class="swot-items">
+        <li>Mercado projetado em US$ 12,9bi até 2034 com CAGR 20,52%</li>
+        <li>Crescimento de 38,2% ao ano no segmento corporativo</li>
+        <li>Alta demanda por saúde mental corporativa pós-pandemia</li>
+        <li>Nordeste carente de soluções de saúde digital — vantagem local</li>
+        <li>+51 milhões de beneficiários de planos empresariais na ANS</li>
+        <li>Integração com IA para análise preditiva de saúde dos times</li>
+        <li>Expansão via distribuidores e corretores de benefícios</li>
+        <li>Módulo premium de saúde mental como carro-chefe de upsell</li>
+      </ul>
+    </div>
+    <div class="swot-cell ameacas">
+      <div class="swot-label">T — Ameaças</div>
+      <ul class="swot-items">
+        <li>Conexa Saúde: líder com 3,7M+ usuários e 1.300+ empresas</li>
+        <li>Concorrência com maior captação de recursos e visibilidade</li>
+        <li>Operadoras (Bradesco, Amil) integrando telemedicina aos planos</li>
+        <li>Consolidação via M&A — iMedicina adquirida pela Conexa</li>
+        <li>Riscos regulatórios: alterações nas normas do CFM</li>
+        <li>Dependência da parceria Einstein — mudança afetaria o produto</li>
+        <li>23 milhões de brasileiros ainda sem acesso digital pleno</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RIVAIS -->
+<section id="rivais">
+  <div class="section-eyebrow">Benchmarking competitivo</div>
+  <div class="section-title">Principais Rivais do Segmento</div>
+  <div class="section-lead">Selecione cada concorrente para ver o que eles fazem que a Gleebem ainda não faz — e onde a Gleebem leva vantagem.</div>
+
+  <div class="rivals-wrapper">
+    <div class="rivals-tabs" id="rival-tabs"></div>
+    <div style="flex:1" id="rival-panels"></div>
+  </div>
+
+  <div style="margin-top:2.5rem;">
+    <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--navy);margin-bottom:1rem;">Radar de posicionamento por dimensão</h3>
+    <div style="overflow-x:auto;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Dimensão</th>
+            <th>Gleebem</th>
+            <th>Conexa Saúde</th>
+            <th>Doctoralia</th>
+            <th>PicDoc</th>
+            <th>Alice Saúde</th>
+          </tr>
+        </thead>
+        <tbody id="comp-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GAPS -->
+<section id="gaps">
+  <div class="section-eyebrow">Diagnóstico crítico</div>
+  <div class="section-title">8 Falhas Identificadas Frente aos Rivais</div>
+  <div class="section-lead">Gaps que precisam ser corrigidos para que a Gleebem compita em igualdade — ou supere — os concorrentes estabelecidos.</div>
+  <div class="gaps-list" id="gaps-list"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DORES -->
+<section id="dores">
+  <div class="section-eyebrow">Público-alvo</div>
+  <div class="section-title">Dores de Quem Compra e Usa</div>
+  <div class="section-lead">Compreender as dores reais de cada perfil é o pré-requisito para comunicar valor de forma precisa e converter com eficiência.</div>
+  <div class="dores-grid">
+    <div class="dor-card emp">
+      <span class="dor-icon">🏢</span>
+      <h3>Empresário / Dono de PME</h3>
+      <ul>
+        <li>Plano de saúde consome até 15% da folha de pagamento</li>
+        <li>Reajustes médios de 14–16% ao ano sem previsibilidade</li>
+        <li>Não consegue competir com grandes empresas em benefícios</li>
+        <li>Não sabe se o investimento em saúde gera resultado real</li>
+        <li>MEI e micro excluídos de planos coletivos acessíveis</li>
+      </ul>
+    </div>
+    <div class="dor-card rh">
+      <span class="dor-icon">👥</span>
+      <h3>Gestor de RH / Benefícios</h3>
+      <ul>
+        <li>Alta sinistralidade (média 81,1%) pressiona renovações</li>
+        <li>Sem dados para justificar investimento ao board</li>
+        <li>Colaboradores usam mal o plano e geram custo desnecessário</li>
+        <li>Dificuldade de medir ROI de saúde corporativa</li>
+        <li>Alta rotatividade ligada à percepção de benefícios ruins</li>
+        <li>Gestão de múltiplas plataformas sem integração</li>
+      </ul>
+    </div>
+    <div class="dor-card col">
+      <span class="dor-icon">👤</span>
+      <h3>Colaborador / Usuário final</h3>
+      <ul>
+        <li>Filas de semanas para conseguir especialista</li>
+        <li>Tem que sair do trabalho para ir ao médico por casos simples</li>
+        <li>Saúde mental negligenciada — psicólogo caro e inacessível</li>
+        <li>Processo burocrático e demorado para marcar consulta</li>
+        <li>Não entende como usar os benefícios disponíveis</li>
+      </ul>
+    </div>
+    <div class="dor-card mei">
+      <span class="dor-icon">🛒</span>
+      <h3>MEI / Micro empresa</h3>
+      <ul>
+        <li>Excluído de planos empresariais por ter menos de 10 colaboradores</li>
+        <li>Não consegue reter talentos sem benefícios de saúde</li>
+        <li>Plano individual custa R$ 350–450/mês/pessoa — inviável</li>
+        <li>Concorre com empresas maiores por candidatos qualificados</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SOLUÇÕES -->
+  <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--navy);margin-top:3rem;margin-bottom:1.5rem;">Como a Gleebem Resolve Cada Dor</h3>
+  <div class="sol-grid" id="sol-grid"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ESTRATÉGIA -->
+<section id="estrategia">
+  <div class="section-eyebrow">Plano de ação</div>
+  <div class="section-title">Estratégia de Marketing — 4 Pilares</div>
+  <div class="section-lead">Framework estruturado para escalar a Gleebem: Autoridade, Aquisição, Ativação e Retenção.</div>
+  <div class="strategy-tabs" id="strat-tabs"></div>
+  <div id="strat-panels"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="section-eyebrow">Execução</div>
+  <div class="section-title">Roadmap — 12 Meses</div>
+  <div class="section-lead">Da fundação de autoridade à consolidação nacional: quatro fases com objetivos claros e ações prioritárias.</div>
+  <div class="card" style="padding:0;overflow:hidden;">
+    <div class="roadmap" id="roadmap-grid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- KPIs -->
+<section>
+  <div class="section-eyebrow">Monitoramento</div>
+  <div class="section-title">KPIs Essenciais</div>
+  <div class="section-lead">Métricas para acompanhar a evolução da estratégia ao longo de 12 meses.</div>
+  <div class="kpi-grid" id="kpi-grid"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONCLUSÃO -->
+<section>
+  <div class="section-eyebrow">Conclusão</div>
+  <div class="section-title">O que fazer agora</div>
+  <div class="section-lead">A Gleebem tem produto diferenciado. O problema não é o produto — é visibilidade, credibilidade e máquina de marketing.</div>
+  <div class="card" style="background:var(--navy);border:none;margin-bottom:1rem;">
+    <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--teal);margin-bottom:1rem;">PRIORITÁRIO — Fazer agora</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;font-size:.83rem;color:rgba(255,255,255,.75);">1. Publicar 3 cases de sucesso com métricas reais</div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;font-size:.83rem;color:rgba(255,255,255,.75);">2. Criar blog com estratégia de SEO</div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;font-size:.83rem;color:rgba(255,255,255,.75);">3. Ativar LinkedIn Empresas com calendário editorial</div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;font-size:.83rem;color:rgba(255,255,255,.75);">4. Gravar vídeo demo do produto (90 segundos)</div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;font-size:.83rem;color:rgba(255,255,255,.75);">5. Adicionar prova social, NPS e avaliações ao site</div>
+    </div>
+  </div>
+  <div style="padding:1.5rem;background:var(--teal-faint);border-radius:14px;border-left:4px solid var(--teal);">
+    <p style="font-size:.9rem;color:var(--navy);line-height:1.75;">O mercado brasileiro de telemedicina corporativa é um dos mais promissores da América Latina. A Gleebem, nascida em Sergipe e com visão nacional, está posicionada no momento certo. A execução disciplinada do roadmap apresentado neste relatório pode transformar a empresa de startup regional em <strong>referência nacional em saúde digital B2B nos próximos 18 a 24 meses</strong>.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIAL & CLIENTS (from gleebem.com.br) -->
+<div class="testimonial-strip">
+  <div class="testimonial-inner">
+    <h2>Veja como ajudamos a <strong>impactar vidas</strong></h2>
+    <div class="testimonial-row">
+      <div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Surreal de bom, nunca passei por uma consulta de vídeo chamada e superou todas expectativas."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">V</div>
+            <div>
+              <div class="testimonial-name">Vitória</div>
+              <div class="testimonial-company">TN Promotora</div>
+            </div>
+          </div>
+        </div>
+        <div class="csat-badge">
+          <span class="csat-star">★</span>
+          <span class="csat-score">4,9</span><span class="csat-max">/5,0</span>
+          <div class="csat-label"><strong>CSAT</strong>Índice de Satisfação do Usuário</div>
+        </div>
+      </div>
+      <div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"A telemedicina da Gleebem reduziu nosso absenteísmo em 30%. O ROI foi visível já no segundo mês de uso."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">R</div>
+            <div>
+              <div class="testimonial-name">Roberto Silva</div>
+              <div class="testimonial-company">Gestor de RH</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" style="margin-top:1rem;">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Meus colaboradores adoraram o app. Prático, rápido e com atendimento humanizado de verdade."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div>
+              <div class="testimonial-name">Marina Costa</div>
+              <div class="testimonial-company">CEO — PME Varejo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="clients-strip">
+  <div class="clients-inner">
+    <p>Empresas que confiam na Gleebem</p>
+    <div class="clients-logos">
+      <span>Pão Nosso</span>
+      <span>Performance</span>
+      <span>Concreto Seco</span>
+      <span>TN Promotora</span>
+      <span>Supermoda</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p><strong>Gleebem</strong> — Relatório de Marketing Estratégico · Março/2026</p>
+  <p style="margin-top:6px;">Fontes: IMARC Group · ABTms · ABRAMED · Frost & Sullivan · Conexa Saúde · PicDoc · iClinic · Alice Saúde · Reclame Aqui · gleebem.com.br</p>
+</footer>
+
+<script>
+/* ─── DATA ─── */
+const rivals = [
+  {
+    id:'conexa', name:'Conexa Saúde', badge:'Líder nacional B2B',
+    desc:'Maior plataforma de telemedicina da América Latina. +30M usuários, 1.300+ empresas clientes, parceria com 192 operadoras de planos de saúde. Fusão com Zenklub a tornando referência em saúde mental corporativa.',
+    does:[
+      'Health Analytics com IA preditiva de saúde',
+      '+30 especialidades (vs 19 da Gleebem)',
+      'Gestão de pacientes crônicos com acompanhamento contínuo',
+      'Cases publicados: Assefaz economizou R$ 4,4mi',
+      'Fusão com Zenklub — maior plataforma de saúde mental',
+      'Parceria com 192 operadoras de planos de saúde',
+      'Clientes: P&G, Mercado Livre, McDonald\'s, Volkswagen',
+      'Hospital Conexa — modelo de hospital 100% digital',
+    ],
+    gleebem:[
+      'Muito mais cara — inviável para MEIs e micro empresas',
+      'Menos flexível para empresas com menos de 50 colaboradores',
+      'Sem garantia de white label acessível para PMEs',
+      'Foco em grandes operadoras — ignora o varejo de PMEs',
+    ]
+  },
+  {
+    id:'doctoralia', name:'Doctoralia', badge:'B2C · Ranking médicos',
+    desc:'Plataforma de agendamento B2C com alta visibilidade nacional. Foco em conectar pacientes a médicos com avaliações públicas e ranking de qualidade.',
+    does:[
+      'Ranking e avaliação pública de médicos',
+      'Alta visibilidade de marca — SEO fortíssimo',
+      'Cobertura nacional com rede enorme de profissionais',
+      'Paciente escolhe o médico livremente por perfil',
+      'Perfis detalhados com formação, especialidade e preço',
+    ],
+    gleebem:[
+      'Não tem solução corporativa estruturada para RH',
+      'Sem dashboard de gestão ou relatórios para empresas',
+      'Sem white label — não agrega à marca do cliente',
+      'Modelo pay-per-use (avulso), não assinatura B2B',
+      'Sem pronto-atendimento 24h para emergências',
+    ]
+  },
+  {
+    id:'picdoc', name:'PicDoc', badge:'B2C · Reputação sólida',
+    desc:'Plataforma B2C com nota 8,2 no Reclame Aqui — uma das melhores do segmento. Forte reputação de atendimento ao paciente final e boa experiência de usuário.',
+    does:[
+      'Nota 8,2 no Reclame Aqui — referência em reputação pública',
+      'Experiência de usuário altamente avaliada pelos pacientes',
+      'Especialidades disponíveis com boa cobertura',
+      'Marketing B2C consistente com bom engajamento',
+    ],
+    gleebem:[
+      'Sem modelo B2B corporativo estruturado para empresas',
+      'Sem dashboard gerencial para gestores de RH',
+      'Sem white label ou personalização por marca',
+      'Sem parceria com hospital de referência como o Einstein',
+    ]
+  },
+  {
+    id:'iclinic', name:'iClinic / Afya', badge:'SaaS para médicos',
+    desc:'Líder em software médico em nuvem. Prontuário eletrônico, gestão de clínicas e telemedicina integrada. Foco no profissional de saúde, não no benefício corporativo.',
+    does:[
+      'Prontuário eletrônico integrado à teleconsulta',
+      'Receituário digital e documentos médicos automatizados',
+      'Software completo de gestão para clínicas e consultórios',
+      'Base enorme de médicos e clínicas parceiras no Brasil',
+      'Integração com sistemas hospitalares e laboratórios',
+    ],
+    gleebem:[
+      'Foco no médico/clínica, não no benefício corporativo',
+      'Não vende para gestores de RH de empresas',
+      'Sem pronto-atendimento 24h para colaboradores',
+      'Sem dashboard de saúde corporativa para o gestor',
+    ]
+  },
+  {
+    id:'alice', name:'Alice Saúde', badge:'Plano digital moderno',
+    desc:'Plano de saúde digital completo para empresas. Menor reajuste do mercado por 4 anos consecutivos. Portal do RH com inteligência de dados de saúde populacional.',
+    does:[
+      'Plano de saúde completo regulado pela ANS — não só telemedicina',
+      'Portal do RH com dados de saúde populacional e alertas',
+      'Time de Saúde 24h disponível no app para orientação',
+      'Reajustes historicamente menores que a média do mercado',
+      'Cobertura nacional com ampla rede credenciada',
+      'Integração com plataformas de benefícios corporativos',
+    ],
+    gleebem:[
+      'Custo muito superior — telemedicina é mais acessível',
+      'Regulada pela ANS — mais burocracia e carência',
+      'Mínimo maior de colaboradores para contratação',
+      'Sem white label personalizado com a marca da empresa',
+    ]
+  },
+];
+
+const compDims = [
+  { dim:'Foco B2B Corporativo', stars:[5,5,2,2,4] },
+  { dim:'White Label', stars:[5,4,1,1,2] },
+  { dim:'Reputação de Marca', stars:[2,5,4,4,4] },
+  { dim:'Cobertura Especialidades', stars:[4,5,5,3,5] },
+  { dim:'Atendimento 24h', stars:[5,4,2,3,4] },
+  { dim:'Dashboards Gerenciais', stars:[4,5,1,1,5] },
+  { dim:'Presença Digital / SEO', stars:[2,5,5,3,4] },
+  { dim:'Acessibilidade PME/MEI', stars:[5,3,4,5,2] },
+  { dim:'Cases e Provas Sociais', stars:[2,5,4,3,4] },
+];
+
+const gaps = [
+  { title:'Ausência de Prova Social Pública', text:'A Gleebem não exibe depoimentos verificados, número de empresas atendidas ou cases de sucesso. Enquanto a Conexa publica casos como "Assefaz economizou R$ 4,4mi", a Gleebem não comunica resultados concretos — elevando a fricção na decisão de compra do gestor de RH.' },
+  { title:'Estratégia de Conteúdo Inexistente', text:'O site não possui blog, artigos, vídeos educacionais ou material rico (e-books, webinars). Concorrentes como Conexa e iClinic constroem autoridade e ranqueamento orgânico via SEO de conteúdo, gerando leads sem custo por clique.' },
+  { title:'Baixo Volume e Consistência nas Redes Sociais', text:'A presença no Instagram (@gleebem) apresenta frequência baixa e engajamento reduzido. O YouTube está subutilizado para um produto visual como telemedicina, onde demos e tutoriais têm alto potencial de conversão.' },
+  { title:'Transparência de Preços Ausente', text:'O site direciona tudo para formulário de contato, sem faixas de preço ou comparativo de planos. Empresas menores (MEI, micro) buscam informação antes de contatar um vendedor — a ausência de preço gera abandono antes do contato.' },
+  { title:'Falta de Integrações com Plataformas de RH', text:'Grandes concorrentes buscam integrações com Gupy, ADP, Flash Benefícios e outros. A Gleebem não comunica nenhuma integração técnica, dificultando a adoção em empresas com ecossistemas de RH já estruturados.' },
+  { title:'SEO e Autoridade Digital Frágeis', text:'A Gleebem não aparece nas primeiras posições para termos como "telemedicina corporativa" ou "saúde digital para empresas". Sem conteúdo otimizado e backlinks de qualidade, a empresa depende inteiramente de canais pagos para geração de demanda.' },
+  { title:'Ausência de Métricas Publicadas', text:'O site menciona "5 minutos de espera" mas não apresenta NPS, satisfação dos usuários, número de consultas realizadas ou taxa de resolução. Concorrentes como Conexa exibem seu NPS como argumento de venda — a Gleebem precisa fazer o mesmo.' },
+  { title:'UX do Site com Potencial a Desenvolver', text:'O website não possui vídeo de demonstração do produto, tour interativo da plataforma ou animações do fluxo de uso. Para vender software B2B, demonstrar visualmente como o produto funciona é essencial para reduzir o ciclo de vendas.' },
+];
+
+const solutions = [
+  { cat:'Custo alto', pain:'Plano consome até 15% da folha e reajusta 14–16%/ano', fix:'Telemedicina como complemento ao plano. Desvia consultas simples (que geram sinistro) para o app — reduzindo sinistralidade e reajustes futuros.', badge:'Redução de sinistro' },
+  { cat:'MEI e micro excluídos', pain:'Plano individual custa R$ 350–450/pessoa/mês — inviável', fix:'Atende a partir de 5 colaboradores incluindo MEI. Única solução estruturada com parceria Einstein e sem carência nesse segmento.', badge:'A partir de 5 vidas' },
+  { cat:'Falta de dados para o RH', pain:'Gestor não tem como provar ROI do benefício ao board', fix:'Dashboards gerenciais de saúde corporativa com utilização, especialidades mais usadas e tendências — argumento concreto para o board.', badge:'Dashboard gerencial' },
+  { cat:'Dificuldade de acesso rápido', pain:'Fila de semanas para especialista. Colaborador sai do trabalho.', fix:'Pronto-atendimento 24h com Einstein em 5 minutos. 7 cliques para iniciar. Sem sair de onde está — celular ou computador.', badge:'5 min · 24h' },
+  { cat:'Marca empregadora fraca', pain:'PMEs perdem candidatos para empresas com plano robusto', fix:'White label: empresa oferece o app com própria marca, comunicando benefício premium. Parceria Einstein agrega credibilidade ao benefício.', badge:'White label' },
+  { cat:'Saúde mental negligenciada', pain:'Burnout e ansiedade geram afastamentos e queda de produtividade', fix:'Psicólogos e psiquiatras entre as 19+ especialidades disponíveis. Colaborador acessa de onde estiver, sem burocracia e sem estigma.', badge:'Saúde mental no app' },
+  { cat:'Urgência de implementação', pain:'Planos convencionais exigem meses de carência antes do uso', fix:'Acesso imediato após o cadastro. Zero dias de carência. Crítico para empresas que precisam de benefício agora.', badge:'Zero carência' },
+];
+
+const pillars = [
+  {
+    name:'Autoridade', emoji:'🏆',
+    actions:[
+      'Publicar ao menos 3 cases de sucesso completos com métricas de resultado no site e LinkedIn',
+      'Criar programa de NPS mensal e divulgar o resultado publicamente no site',
+      'Produzir vídeo institucional de 90s demonstrando o fluxo completo de uso do app',
+      'Parceria editorial com veículos de RH (Portal RH, Você RH, Exame) para artigos patrocinados',
+      'Ativar LinkedIn Empresas com calendário editorial focado em decisores de RH e Diretoria',
+      'Coletar e publicar avaliações na Google Play Store e App Store — meta: 4,5+ estrelas',
+    ]
+  },
+  {
+    name:'Aquisição', emoji:'🎯',
+    actions:[
+      'Lançar blog com 2 artigos/semana: saúde corporativa, absenteísmo, ROI de telemedicina',
+      'Otimizar SEO para termos de alta intenção: "telemedicina para empresas", "benefícios saúde PME"',
+      'Criar landing pages específicas por segmento: varejo, escritórios, indústria e serviços',
+      'Implementar Google Ads e Meta Ads segmentados por cargo (Diretor RH, CEO, Gestor Benefícios)',
+      'Desenvolver calculadora digital de ROI: "Quanto sua empresa economiza com telemedicina?"',
+      'Criar programa de indicação com incentivos para empresas clientes que recomendam a Gleebem',
+      'Explorar parcerias com corretoras de seguros e benefícios como canal de distribuição indireto',
+    ]
+  },
+  {
+    name:'Ativação', emoji:'⚡',
+    actions:[
+      'Adicionar tabela de planos com faixas de preço ao site — mesmo que com "a partir de R$ X/vida"',
+      'Oferecer trial gratuito de 30 dias para empresas com 10+ colaboradores',
+      'Criar demonstração interativa (product tour) do app diretamente no site institucional',
+      'Desenvolver proposta comercial automatizada com personalização por porte de empresa',
+      'Implementar chatbot qualificador no site para triagem de leads antes do contato humano',
+      'Criar kit de implementação para acelerar o onboarding do cliente — reduz churn precoce',
+    ]
+  },
+  {
+    name:'Retenção', emoji:'🔁',
+    actions:[
+      'Dashboard de saúde corporativa mais robusto com benchmarks setoriais e alertas de risco',
+      'Oferecer campanhas internas de engajamento para clientes: "Semana da Saúde Digital"',
+      'Programa Customer Success: contato proativo mensal com gestores de RH das empresas clientes',
+      'Lançar módulo premium de saúde mental como upsell — maior demanda no pós-pandemia',
+      'Integração com plataformas de benefícios (Flash, Swile, Alelo) para facilitar expansão',
+      'Criar comunidade de gestores de RH clientes para troca de experiências — aumenta vínculo',
+    ]
+  },
+];
+
+const roadmap = [
+  {
+    period:'Meses 1–3', name:'Fundação',
+    items:['Publicar 3 cases de sucesso','Criar blog + 12 artigos','Otimizar SEO on-page','Vídeo institucional do produto','Ativar LinkedIn Empresas'],
+    goal:'Construir base de autoridade e conteúdo'
+  },
+  {
+    period:'Meses 4–6', name:'Aceleração',
+    items:['Lançar Google Ads e Meta Ads','Criar calculadora de ROI','Iniciar programa de parceiros','Adicionar tabela de planos','Implementar chatbot qualificador'],
+    goal:'Escalar geração de leads qualificados'
+  },
+  {
+    period:'Meses 7–9', name:'Expansão',
+    items:['Trial gratuito de 30 dias','Product tour interativo no site','Programa de indicação ativo','Módulo saúde mental premium','Customer Success estruturado'],
+    goal:'Aumentar conversão e reduzir churn'
+  },
+  {
+    period:'Meses 10–12', name:'Consolidação',
+    items:['Integração com plataformas RH','Comunidade de clientes','Campanhas co-branded','Expansão regional Sul/Sudeste','Avaliação de rodada de captação'],
+    goal:'Escala nacional e preparação para crescimento'
+  },
+];
+
+const kpis = [
+  { label:'Tráfego orgânico/mês', current:'< 1k visitas (est.)', target:'+5.000 visitas/mês', tool:'Google Analytics' },
+  { label:'Leads qualificados/mês', current:'Não publicado', target:'+200 leads MQL/mês', tool:'CRM' },
+  { label:'Taxa de conversão lead→cliente', current:'Não publicado', target:'≥ 8%', tool:'CRM / Pipeline' },
+  { label:'NPS dos clientes', current:'Não publicado', target:'≥ 65 (zona excelente)', tool:'Survey mensal' },
+  { label:'Avaliação app (Play/App Store)', current:'Não verificado', target:'≥ 4,5 estrelas', tool:'Lojas de apps' },
+  { label:'Engajamento Instagram', current:'Baixo', target:'≥ 3% por publicação', tool:'Meta Business' },
+  { label:'Churn rate de clientes', current:'Não publicado', target:'≤ 5% ao ano', tool:'CRM / Billing' },
+  { label:'CAC (Custo de aquisição)', current:'Não publicado', target:'Reduzir 20% no ano', tool:'Analytics + CRM' },
+  { label:'Empresas ativas (total)', current:'Não divulgado', target:'+300 empresas ativas', tool:'CRM interno' },
+];
+
+/* ─── RENDER RIVALS ─── */
+const tabsEl = document.getElementById('rival-tabs');
+const panelsEl = document.getElementById('rival-panels');
+
+rivals.forEach((r, i) => {
+  const tab = document.createElement('button');
+  tab.className = 'rival-tab' + (i===0?' active':'');
+  tab.innerHTML = r.name + '<small>' + r.badge + '</small>';
+  tab.onclick = () => {
+    document.querySelectorAll('.rival-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.rival-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+r.id).classList.add('active');
+  };
+  tabsEl.appendChild(tab);
+
+  const panel = document.createElement('div');
+  panel.className = 'rival-panel card' + (i===0?' active':'');
+  panel.id = 'panel-'+r.id;
+  panel.innerHTML = `
+    <div class="rival-header">
+      <div>
+        <div class="rival-name-big">${r.name}</div>
+        <div class="rival-body">${r.desc}</div>
+      </div>
+      <span class="rival-badge">${r.badge}</span>
+    </div>
+    <div class="rival-cols">
+      <div class="rival-col plus">
+        <div class="rival-col-label plus">O que eles fazem que a Gleebem não faz</div>
+        <ul>${r.does.map(d=>`<li>${d}</li>`).join('')}</ul>
+      </div>
+      <div class="rival-col minus">
+        <div class="rival-col-label minus">Onde a Gleebem leva vantagem</div>
+        <ul>${r.gleebem.map(d=>`<li>${d}</li>`).join('')}</ul>
+      </div>
+    </div>
+  `;
+  panelsEl.appendChild(panel);
+});
+
+/* ─── RENDER COMP TABLE ─── */
+const names = ['Gleebem','Conexa Saúde','Doctoralia','PicDoc','Alice Saúde'];
+const tbody = document.getElementById('comp-tbody');
+compDims.forEach(row => {
+  const tr = document.createElement('tr');
+  if(row.dim === 'Acessibilidade PME/MEI') tr.className='gleebem';
+  let cells = `<td style="font-weight:500">${row.dim}</td>`;
+  row.stars.forEach((s,i) => {
+    const stars = '★'.repeat(s)+'☆'.repeat(5-s);
+    cells += `<td style="${i===0?'font-weight:700;color:var(--teal-dark)':''}">
+      <span class="star-full">${'★'.repeat(s)}</span><span class="star-empty">${'☆'.repeat(5-s)}</span>
+    </td>`;
+  });
+  tr.innerHTML = cells;
+  tbody.appendChild(tr);
+});
+
+/* ─── RENDER GAPS ─── */
+const gapsList = document.getElementById('gaps-list');
+gaps.forEach((g, i) => {
+  const row = document.createElement('div');
+  row.className = 'gap-row';
+  row.innerHTML = `
+    <div class="gap-left">
+      <div class="gap-number">Falha ${String(i+1).padStart(2,'0')}</div>
+      <div class="gap-title">${g.title}</div>
+    </div>
+    <div class="gap-right">${g.text}</div>
+  `;
+  gapsList.appendChild(row);
+});
+
+/* ─── RENDER SOLUTIONS ─── */
+const solGrid = document.getElementById('sol-grid');
+solutions.forEach(s => {
+  const row = document.createElement('div');
+  row.className = 'sol-row';
+  row.innerHTML = `
+    <div class="sol-pain">
+      <div class="sol-pain-cat">${s.cat}</div>
+      <div class="sol-pain-text">${s.pain}</div>
+    </div>
+    <div class="sol-fix">${s.fix}</div>
+    <div class="sol-tag"><span class="badge">${s.badge}</span></div>
+  `;
+  solGrid.appendChild(row);
+});
+
+/* ─── RENDER STRATEGY ─── */
+const stratTabsEl = document.getElementById('strat-tabs');
+const stratPanelsEl = document.getElementById('strat-panels');
+pillars.forEach((p, i) => {
+  const tab = document.createElement('button');
+  tab.className = 'strat-tab' + (i===0?' active':'');
+  tab.textContent = p.emoji + ' ' + p.name;
+  tab.onclick = () => {
+    document.querySelectorAll('.strat-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.strat-panel').forEach(pl=>pl.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('strat-'+i).classList.add('active');
+  };
+  stratTabsEl.appendChild(tab);
+
+  const panel = document.createElement('div');
+  panel.className = 'strat-panel' + (i===0?' active':'');
+  panel.id = 'strat-'+i;
+  panel.innerHTML = p.actions.map((a,j)=>`
+    <div class="strat-item">
+      <div class="strat-num">${String(j+1).padStart(2,'0')}</div>
+      <div class="strat-text">${a}</div>
+    </div>
+  `).join('');
+  stratPanelsEl.appendChild(panel);
+});
+
+/* ─── RENDER ROADMAP ─── */
+const roadGrid = document.getElementById('roadmap-grid');
+roadmap.forEach(phase => {
+  const col = document.createElement('div');
+  col.className = 'road-phase';
+  col.innerHTML = `
+    <div class="road-period">${phase.period}</div>
+    <div class="road-name">${phase.name}</div>
+    <ul class="road-items">${phase.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+    <div class="road-goal">${phase.goal}</div>
+  `;
+  roadGrid.appendChild(col);
+});
+
+/* ─── RENDER KPIs ─── */
+const kpiGrid = document.getElementById('kpi-grid');
+kpis.forEach(k => {
+  const card = document.createElement('div');
+  card.className = 'kpi-card';
+  card.innerHTML = `
+    <div class="kpi-label">${k.label}</div>
+    <div class="kpi-current">Atual: ${k.current}</div>
+    <div class="kpi-target">${k.target}</div>
+    <div class="kpi-tool">${k.tool}</div>
+  `;
+  kpiGrid.appendChild(card);
+});
+
+/* ─── SCROLL ANIMATION ─── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .swot-cell, .dor-card, .gap-row, .sol-row, .road-phase, .kpi-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
